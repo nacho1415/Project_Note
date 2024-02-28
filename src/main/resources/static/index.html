@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,21 +18,70 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         h1 {
             text-align: center;
+        }
+        .create-button {
+            position: absolute;
+            top: 20px; /* 조정 */
+            right: 20px; /* 조정 */
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .create-button:hover {
+            background-color: #45a049;
         }
         .project {
             margin-bottom: 20px;
             padding: 20px;
             background-color: #f9f9f9;
             border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
         }
         .project h2 {
             margin-top: 0;
+            margin-bottom: 10px; /* 타이틀과 설명 사이 여백 추가 */
+            flex: 60%; /* 타이틀과 설명이 60% 차지하도록 */
+            /* 타이틀이 일정 너비를 넘어가면 줄바꿈되도록 */
+            word-break: break-all;
+            /* 타이틀이 최대 너비를 초과하면 자동으로 줄바꿈되도록 */
+            max-width: 60%;
         }
         .project p {
             margin-bottom: 0;
+            flex: 60%; /* 타이틀과 설명이 60% 차지하도록 */
+            word-wrap: break-word; /* 태그 길이가 일정하지 않아도 개행되도록 */
+            /* 설명이 일정 너비를 넘어가면 줄바꿈되도록 */
+            word-break: break-all;
+        }
+        .tags {
+            flex: 30%; /* 태그가 30% 차지하도록 */
+            max-width: 30%; /* 태그 영역의 최대 너비 설정 */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .tag {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 2px 6px;
+            /* 태그가 일정 너비를 넘어가면 줄바꿈되도록 */
+            word-break: break-all;
         }
     </style>
 </head>
@@ -39,17 +89,38 @@
 
 <div class="container">
     <h1>My Projects</h1>
+    <button class="create-button">Create Project</button>
     <div class="project">
-        <h2>Project 1</h2>
+        <h2>Project 1 Title</h2>
         <p>This is a description of Project 1.</p>
+        <div class="tags">
+            <span class="tag">tag 1</span>
+            <span class="tag">Tag 2</span>
+            <span class="tag">Tag 3</span>
+            <span class="tag">Tag 4dsad</span>
+            <span class="tag">Tag 5</span>
+            <span class="tag">Tag 6</span>
+        </div>
     </div>
     <div class="project">
-        <h2>Project 2</h2>
+        <h2>Project 2 Title</h2>
         <p>This is a description of Project 2.</p>
+        <div class="tags">
+            <span class="tag">Tag 1</span>
+            <span class="tag">Tag 2</span>
+            <span class="tag">Tag 3</span>
+            <span class="tag">Tag 4</span>
+        </div>
     </div>
     <div class="project">
-        <h2>Project 3</h2>
+        <h2>Project 3 Title</h2>
         <p>This is a description of Project 3.</p>
+        <div class="tags">
+            <span class="tag">Tag 1</span>
+            <span class="tag">Tag 2</span>
+            <span class="tag">Tag 3</span>
+            <span class="tag">Tag 4</span>
+        </div>
     </div>
     <!-- Add more projects as needed -->
 </div>
